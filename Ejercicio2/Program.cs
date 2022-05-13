@@ -4,7 +4,7 @@
 // FECHA:   13/05/2022          //
 //////////////////////////////////
 
-Console.Title = "PoloTic Cordoba - Ejercicio 6 - GIACOBINI GASTÓN 2022";
+Console.Title = "PoloTic Cordoba - Tarea 2 - GIACOBINI GASTÓN 2022";
 
 int numeroSecreto = new Random(DateTime.Now.Millisecond).Next(1, 21);
 
