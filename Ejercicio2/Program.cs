@@ -68,4 +68,12 @@ do {
 
 } while (true);
 
-Console.Beep(659, 125); Console.Beep(659, 125); Thread.Sleep(125); Console.Beep(659, 125); Thread.Sleep(167); Console.Beep(523, 125); Console.Beep(659, 125); Thread.Sleep(125); Console.Beep(784, 125);
+Console.Beep(659, 125); 
+Console.Beep(659, 125); 
+Thread.Sleep(125); 
+Console.Beep(659, 125); 
+Thread.Sleep(167); 
+Console.Beep(523, 125); 
+Console.Beep(659, 125); 
+Thread.Sleep(125); 
+Console.Beep(784, 125);
