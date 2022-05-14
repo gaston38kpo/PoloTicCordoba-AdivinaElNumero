@@ -5,6 +5,8 @@
 //////////////////////////////////
 
 Console.Title = "PoloTic Cordoba - Tarea 2 - GIACOBINI GASTÓN 2022 - v1.0";
+
+// Arte Ascii para la estetica del programa.
 string welcomeLogoAscii =
     @"                                              
             ▐▓█▀▀▀▀▀▀▀▀▀█▓▌░▄▄▄▄▄░            
@@ -29,6 +31,7 @@ string winMessageAscii =
       █░█ █▄█ █▀██ █▄█ ░▀▄ ░█░ █▀▀ ▀ ▀
       ░▀▀ ▀░▀ ▀░░▀ ▀░▀ ▀▀░ ░▀░ ▀▀▀ ▀ ▀
 ";
+
 
 int secretNumber = new Random(DateTime.Now.Millisecond).Next(1, 21);
 
@@ -91,6 +94,7 @@ Console.ForegroundColor = ConsoleColor.Cyan;
 Console.Write(winMessageAscii);
 Console.ResetColor();
 
+// Musica de victoria.
 Console.Beep(659, 125); 
 Console.Beep(659, 125); 
 Thread.Sleep(125); 
