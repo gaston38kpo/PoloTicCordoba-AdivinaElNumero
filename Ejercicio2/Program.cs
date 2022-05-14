@@ -5,18 +5,8 @@
 //////////////////////////////////
 
 Console.Title = "PoloTic Cordoba - Tarea 2 - GIACOBINI GASTÓN 2022 - v1.0";
-
-int secretNumber = new Random(DateTime.Now.Millisecond).Next(1, 21);
-secretNumber = 1;
-int lapNumber = 1;
-
-do {
-    Console.Clear();
-    
-    
-    Console.BackgroundColor = ConsoleColor.Blue;
-    Console.ForegroundColor = ConsoleColor.Black;
-    Console.WriteLine(@"                                              
+string welcomeLogoAscii =
+    @"                                              
             ▐▓█▀▀▀▀▀▀▀▀▀█▓▌░▄▄▄▄▄░            
             ▐▓█░▄▀▀░▄▀▀░█▓▌░█▄▄▄█░            
             ▐▓█░█░░░▀▀▄░█▓▌░█▄▄▄█░            
@@ -26,7 +16,31 @@ do {
                  Bienvenido a                 
            Adivina el Número en C#!           
                                               
-");
+";
+string catLogoAscii =
+    @"
+                ▄▀▄     ▄▀▄
+               ▄█░░▀▀▀▀▀░░█▄
+           ▄▄  █░░░░░░░░░░░█  ▄▄
+          █▄▄█ █░░▀░░┬░░▀░░█ █▄▄█";
+string winMessageAscii =
+    @"
+      ▄▀▀ ▄▀▄ █▄░█ ▄▀▄ ▄▀▀ ▀█▀ █▀▀ █ █
+      █░█ █▄█ █▀██ █▄█ ░▀▄ ░█░ █▀▀ ▀ ▀
+      ░▀▀ ▀░▀ ▀░░▀ ▀░▀ ▀▀░ ░▀░ ▀▀▀ ▀ ▀
+";
+
+int secretNumber = new Random(DateTime.Now.Millisecond).Next(1, 21);
+
+int lapNumber = 1;
+
+do {
+    Console.Clear();
+    
+    
+    Console.BackgroundColor = ConsoleColor.Blue;
+    Console.ForegroundColor = ConsoleColor.Black;
+    Console.WriteLine(welcomeLogoAscii);
     Console.ResetColor();
     
 
@@ -43,11 +57,13 @@ do {
     if (userNumber != secretNumber) {
         Console.BackgroundColor = ConsoleColor.DarkRed;
         Console.ForegroundColor = ConsoleColor.White;
-        Console.WriteLine($"\n\n\t  El numero es muy {(userNumber > secretNumber ? "GRANDE" : "CHICO")}!  \n");
+        Console.WriteLine(
+            $"\n\n\t  El numero es muy {(userNumber > secretNumber ? "GRANDE" : "CHICO")}!  \n"
+            );
         Console.ResetColor();
 
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write($"\nPresione una tecla para volver a intentarlo...");
+        Console.Write("\nPresione una tecla para volver a intentarlo...");
 
         Console.ReadKey();
     } else {        
@@ -65,20 +81,14 @@ Console.WriteLine("\n\n                Felicitaciones!!              ");
 Console.ResetColor();
 
 Console.ForegroundColor = ConsoleColor.DarkGreen;
-Console.WriteLine($"\n  Has adivinado el NUMERO SECRETO que era: {secretNumber}\n\tLo has logrado en {lapNumber} intento{(lapNumber == 1 ? "" : 's')}!!");
+Console.WriteLine(
+    $"\n  Has adivinado el NUMERO SECRETO que era: {secretNumber}\n\tLo has logrado en {lapNumber} intento{(lapNumber == 1 ? "" : "s")}!!"
+    );
 
 Console.ForegroundColor = ConsoleColor.Blue;
-Console.Write(@"
-                ▄▀▄     ▄▀▄
-               ▄█░░▀▀▀▀▀░░█▄
-           ▄▄  █░░░░░░░░░░░█  ▄▄
-          █▄▄█ █░░▀░░┬░░▀░░█ █▄▄█");
+Console.Write(catLogoAscii);
 Console.ForegroundColor = ConsoleColor.Cyan;
-Console.Write(@"
-      ▄▀▀ ▄▀▄ █▄░█ ▄▀▄ ▄▀▀ ▀█▀ █▀▀ █ █
-      █░█ █▄█ █▀██ █▄█ ░▀▄ ░█░ █▀▀ ▀ ▀
-      ░▀▀ ▀░▀ ▀░░▀ ▀░▀ ▀▀░ ░▀░ ▀▀▀ ▀ ▀
-");
+Console.Write(winMessageAscii);
 Console.ResetColor();
 
 Console.Beep(659, 125); 
